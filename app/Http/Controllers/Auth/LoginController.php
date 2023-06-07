@@ -46,10 +46,11 @@ class LoginController extends Controller
         // dd($this->redirectTo);
         if (auth()->user()->type == 'admin') {
             # code...
-            dd('admin');
+            // dd('admin');
+            return view('dashboard/index');
 
         }else{
-            redirect()->route('index');
+           return redirect()->route('index');
         }
     }
 }
