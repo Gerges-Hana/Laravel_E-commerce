@@ -15,20 +15,20 @@ return new class extends Migration
         //
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('description');
-            $table->string('whatsapp');
-            $table->string('phone');
-            $table->string('etc');
-            $table->string('addresses');
-            $table->string('emaile');
-            $table->string('logo');
-            $table->string('faveicon');
-            $table->string('facebook');
-            $table->string('twitter');
-            $table->string('instagram');
-            $table->string('youtube');
-            $table->string('tiktok');
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
+            $table->string('whatsapp')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('etc')->nullable();
+            $table->string('addresses')->nullable();
+            $table->string('emaile')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('faveicon')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('tiktok')->nullable();
 
             $table->timestamps();
         });
