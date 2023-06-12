@@ -25,10 +25,11 @@ class AppServiceProvider extends ServiceProvider
             $setting=Setting::firstOr(function(){
 
                 return Setting::create([
-                    'name'=>'site_name',
+                    'name'=>'siteName',
                     'description'=>'laravel'
                 ]);
             });
+            // dd($setting,$setting->id);
             view()->share('setting',$setting);
         }
     }

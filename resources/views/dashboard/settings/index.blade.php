@@ -86,7 +86,7 @@
 
                                     <div class="form-group">
                                         <label for="validationCustomtitle" class="col-form-label pt-0">العنوان</label>
-                                        <input class="form-control" id="validationCustomtitle" type="text" name="address"
+                                        <input class="form-control" id="validationCustomtitle" type="text" name="addresses"
                                             value="{{ $setting->address }}">
                                     </div>
 

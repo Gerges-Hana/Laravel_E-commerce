@@ -15,13 +15,14 @@ return new class extends Migration
         //
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
             $table->string('title')->nullable();
             $table->string('description')->nullable();
             $table->string('whatsapp')->nullable();
             $table->string('phone')->nullable();
             $table->string('etc')->nullable();
             $table->string('addresses')->nullable();
-            $table->string('emaile')->nullable();
+            $table->string('email')->nullable();
             $table->string('logo')->nullable();
             $table->string('faveicon')->nullable();
             $table->string('facebook')->nullable();

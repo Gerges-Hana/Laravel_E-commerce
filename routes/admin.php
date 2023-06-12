@@ -2,8 +2,9 @@
 
 use App\Http\Controllers\Dashboard\IndexController;
 use App\Http\Controllers\Dashboard\SettingController;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 //     return ('dashboard.index');
 // });
 
+
 Route::get('/index',[IndexController::class,'index'] )->name('admin');
-Route::put('/setting/{id}',[SettingController::class,'update'] )->name('dashboard.settings.update');
+Route::get('/setting/index',[SettingController::class,'index'] )->name('dashboard.settings.index');
+Route::put('/setting/{setting}/update',[SettingController::class,'update'] )->name('dashboard.settings.update');
 
 

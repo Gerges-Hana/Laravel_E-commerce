@@ -9,6 +9,6 @@ class Setting extends Model
 {
     use HasFactory;
 
-    protected $fillable=['id', 'title', 'description', 'whatsapp', 'phone', 'etc', 'addresses', 'emaile', 'logo', 'faveicon', 'facebook', 'twitter', 'instagram', 'youtube', 'tiktok'];
+    protected $fillable=['id', 'title', 'description', 'whatsapp', 'phone', 'etc', 'addresses', 'email', 'logo', 'faveicon', 'facebook', 'twitter', 'instagram', 'youtube', 'tiktok'];
     protected $table='settings';
 }
