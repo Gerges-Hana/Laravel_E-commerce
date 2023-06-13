@@ -38,9 +38,9 @@ class SettingController extends Controller
 
         $request->logo->storeAs('public/logos', $logoName);
 
-        $logoName = time().'.'.$request->logo->extension();
+        $faveiconsName = time().'.'.$request->faveicons->extension();
 
-        $request->logo->storeAs('public/logos', $logoName);
+        $request->faveicons->storeAs('public/faveiconss', $faveiconsName);
 
 
         return redirect()->route('dashboard.settings.index')->with('succes', 'تم تحديث الاعدادات بنجاح');
