@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-form-label">الصورة المصغرة</label>
-                                        <input class="form-control" id="validationCustom05" type="file" name="favicon">
+                                        <input class="form-control" id="validationCustom05" type="file" name="faveicon">
                                     </div>
 
 

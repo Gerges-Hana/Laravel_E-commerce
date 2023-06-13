@@ -26,7 +26,7 @@ class SettingUpdateRequests extends FormRequest
             'name' => 'string|nullable',
             'description' => 'string|nullable',
             'logo' => 'image|mimes:jpeg,png,jpg,gif|max:2048|nullable',
-            'favicon' => 'image|mimes:jpeg,png,jpg,gif|max:2048|nullable',
+            'faveicon' => 'image|mimes:jpeg,png,jpg,gif|max:2048|nullable',
             'email' => 'email',
             'phone' => 'string|nullable',
             'addresses' => 'string|nullable',
