@@ -34,9 +34,10 @@ class SettingController extends Controller
         }
 
 
-        if ($request->favicon) {
-           $favicon= ImageUpload::uploadImage($request->favicon, 32, 32, 'favicon/');
-            Setting::where('id', $settig)->update(['favicon' => $favicon]);
+        if ($request->faveicon) {
+            $faveicon= ImageUpload::uploadImage($request->faveicon, 32, 32, 'favicon/');
+            Setting::where('id', $settig)->update(['faveicon' => $faveicon]);
+            // dd('ffffffffffffff');
         }
 
 

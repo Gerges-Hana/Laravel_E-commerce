@@ -48,13 +48,27 @@
                                     @endif
 
                                     <div class="form-group">
+
+
+
                                         <label for="validationCustom05" class="col-form-label pt-0">
                                             لوجو الموقع</label>
-                                        <input class="form-control" id="validationCustom05" type="file" name="logo">
+
+                                        <input class="form-control dropify" " data-default-file="{{ asset($setting->logo) }}" id="validationCustom05" type="file" name="logo">
+
+
+
                                     </div>
+
+
                                     <div class="form-group">
+
                                         <label class="col-form-label">الصورة المصغرة</label>
-                                        <input class="form-control" id="validationCustom05" type="file" name="faveicon">
+
+                                        <input class="form-control dropify"  data-default-file="{{ asset($setting->faveicon) }}" id="validationCustom05" type="file" name="faveicon">
+
+
+
                                     </div>
 
 

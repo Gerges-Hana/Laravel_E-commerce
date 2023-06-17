@@ -42,6 +42,8 @@
 
     <!-- App css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('dashboard') }}/assets/css/style.css">
+    <!-- dropify css-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('dashboard/assets/dropify.css') }}">
 </head>
 
 <body class="rtl">
@@ -290,6 +292,12 @@
 
     <!--script admin-->
     <script src="{{ asset('dashboard') }}/assets/js/admin-script.js"></script>
+    <!--dropify admin-->
+    <script src="{{ asset('dashboard/assets/dropify.js') }}"></script>
+
+    <script>
+        $('.dropify').dropify();
+    </script>
 </body>
 
 </html>

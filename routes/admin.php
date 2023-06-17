@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\IndexController;
 use App\Http\Controllers\Dashboard\SettingController;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Routing\RouteGroup;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,13 +18,21 @@ use Illuminate\Http\Request;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-// Route::get('/gg', function () {
-//     return ('dashboard.index');
+// Route::get('/categories/edit', function () {
+//     return view('dashboard.categories.edit');
 // });
 
 
+Route::get('/',[IndexController::class,'index'] )->name('admin');
 Route::get('/index',[IndexController::class,'index'] )->name('admin');
-Route::get('/setting/index',[SettingController::class,'index'] )->name('dashboard.settings.index');
-Route::put('/setting/{setting}/update',[SettingController::class,'update'] )->name('dashboard.settings.update');
+Route::group(['as'=>'dashboard.'],function(){
+
+    Route::get('/setting/index',[SettingController::class,'index'] )->name('settings.index');
+    Route::put('/setting/{setting}/update',[SettingController::class,'update'] )->name('settings.update');
+
+    // category routes
+    Route::delete('/categories/delete/{id}',[CategoryController::class,'delete'] )->name('categories.delete');
+    Route::resource('categories', CategoryController::class);
+});
 
 

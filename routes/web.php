@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboard.settings.index');
+    return view('dashboard.index');
 })->name('index');
+Route::get('/categories/edit', function () {
+    return view('dashboard.categories.edit');
+});
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

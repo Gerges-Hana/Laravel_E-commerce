@@ -20,8 +20,8 @@ class ImageUpload
         $image->fit($width, $width, function ($constraint) {
             $constraint->upsize();
         })->stream();
-        Storage::disk('public')->put($path . $imagename, $image);
-        return 'puplic/'.$path.$imagename;
+        Storage::disk('images')->put($path . $imagename, $image);
+        return $path.$imagename;
 
         // dd([$width, $height]);
 
