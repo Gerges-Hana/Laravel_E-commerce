@@ -44,9 +44,10 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
-        dd('dddddddddddddddon');
+        dd($request->all());
     }
 
+    // public function(){}
     /**
      * Display the specified resource.
      */
