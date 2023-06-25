@@ -11,7 +11,7 @@ class categoryStoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,18 @@ class categoryStoreRequest extends FormRequest
     {
         return [
             //
+            'name' => 'required|unique:categories,name',
+            'parent_id' => 'nullable|exists:categories,id',
+            'image' => 'required|image|mimes:png,jpg,ipeggif,svg
+            max:2048',
         ];
     }
+
+    public function messages()
+{
+    return [
+        'name.required' => 'يرجي ادخال الاسم ',
+        'image.required' => 'يرجي ادخال صوره للمنتج  ',
+    ];
+}
 }

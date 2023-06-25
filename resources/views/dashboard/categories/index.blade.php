@@ -50,11 +50,12 @@
                                 <div class="alert alert-danger">
                                     <ul>
                                         @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
+                                            <li  style="display: block;"> * {{ $error }} </li>
                                         @endforeach
                                     </ul>
                                 </div>
                             @endif
+
                             <div class="table-responsive table-desi">
                                 <table class="table all-package table-category " id="editableTable">
                                     <thead>

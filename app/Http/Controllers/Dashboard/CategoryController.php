@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\categories\categoryStoreRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Service\CategoryService;
@@ -41,10 +42,12 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(categoryStoreRequest $request)
     {
         //
-        dd($request->all());
+        // dd($request->all());
+        $this->category->store($request->validated());
+        return redirect()->route('dashboard.categories.index')->with('success','تمت الاضافه بنجاح');
     }
 
     // public function(){}
