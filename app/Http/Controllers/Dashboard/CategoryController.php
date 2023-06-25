@@ -44,6 +44,8 @@ class CategoryController extends Controller
      */
     public function store(categoryStoreRequest $request)
     {
+        $mainCategories=$this->category->getMainCategory();
+
         //
         // dd($request->all());
         $this->category->store($request->validated());
@@ -63,18 +65,29 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit( $id)
     {
         //
-        dd($id,'edit');
+        // dd($id,'edit');
+        $mainCategories=$this->category->getMainCategory();
+
+       $category=$this->category->getById($id,true);
+        // dd($category);
+        return view('dashboard.categories.edit',compact('category','mainCategories'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(categoryStoreRequest $request,$id)
     {
-        //
+
+        $mainCategories=$this->category->getMainCategory();
+        $this->category->update($id,$request->validated());
+        // dd("ffffffff");
+        return redirect()->route('dashboard.categories.index',$id)->with('success','تمت الاضافه بنجاح');
+
     }
 
     /**

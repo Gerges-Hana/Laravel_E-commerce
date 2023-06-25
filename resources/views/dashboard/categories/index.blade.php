@@ -62,8 +62,8 @@
                                         <tr>
                                             <th>الإسم</th>
                                             <th>الصورة</th>
-                                            <th>الوصف</th>
                                             <th>القسم الرئيسي</th>
+                                            <th>العمليات </th>
 
 
                                         </tr>
@@ -80,10 +80,10 @@
                                         <tr>
                                             <td>{{ $category->name }}</td>
                                             <td><img src="{{ $category->image }}" alt="{{ $category->name }}" width="50"></td>
-                                            <td>{{ $category->description }}</td>
+                                            <td>{{ $category->prodect_id }}</td>
                                             <td class="d-flex justify-content-around">
                                               <a href="{{ route('dashboard.categories.edit', $category->id) }}" class="btn btn-primary">تعديل</a>
-                                              <a href="{{ route('dashboard.categories.show', $category->id) }}" class="btn btn-success">عرض</a>
+                                              {{-- <a href="{{ route('dashboard.categories.show', $category->id) }}" class="btn btn-success">عرض</a> --}}
 
 
                                               <form action="{{ route('dashboard.categories.delete', $category->id) }}" method="POST">

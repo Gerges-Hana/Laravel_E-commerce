@@ -39,7 +39,7 @@
 
 
                         </div>
-{{--
+
                         <div class="card-body">
 
                             <div class="card-body">
@@ -53,7 +53,7 @@
                                 </div>
                             @endif
                             <div class="table-responsive table-desi">
-                                 <form class="needs-validation" action="{{route('dashboard.categories.update',$category->id)}}" method="POST" enctype="multipart/form-data"> 
+                                 <form class="needs-validation" action="{{route('dashboard.categories.update',$category->id)}}" method="POST" enctype="multipart/form-data">
                                     <div class="form">
                                         @csrf
                                         @method('put')
@@ -90,7 +90,7 @@
                             </div>
                         </div>
 
- --}}
+
 
 
 

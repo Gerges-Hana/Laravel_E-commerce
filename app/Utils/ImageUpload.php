@@ -17,7 +17,7 @@ class ImageUpload
         $height = $height ?? $heightDefult;
 
         $image = Image::make($request->path());
-        $image->fit($width, $width, function ($constraint) {
+        $image->fit($width, $height, function ($constraint) {
             $constraint->upsize();
         })->stream();
         Storage::disk('images')->put($path . $imagename, $image);
