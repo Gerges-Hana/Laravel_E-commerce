@@ -105,7 +105,7 @@ class CategoryController extends Controller
         Category::find($id)
         ->delete();
 
-    return  redirect('/');
+        return redirect()->route('dashboard.categories.index');
     //    $category=Category::where('id',$id)->get();
     // //    dd($category->id);
     //     $category->delete(); // يتم حذف الفئة بشكل ناعم

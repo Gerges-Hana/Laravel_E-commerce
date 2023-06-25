@@ -3,16 +3,24 @@
 namespace App\Service;
 
 use App\Models\Category;
+use App\Repositories\CategoryRepository;
 use App\Utils\ImageUpload;
 use GuzzleHttp\Promise\Create;
+
 
 class CategoryService
 {
 
+    public $categoryRepository;
+    public function __construct(CategoryRepository $repo)
+    {
+        $this->categoryRepository=$repo;
+    }
 
     public function getMainCategory()
     {
-        return Category::where('prodect_id',0)->orWhere('prodect_id',null)->get();
+        return $this->categoryRepository->getMainCategory();
+        // return Category::where('prodect_id',0)->orWhere('prodect_id',null)->get();
         // return Category::whereNull('parent_id')->get();
     }
 
@@ -22,20 +30,19 @@ class CategoryService
         if(isset($params['image'])){
             $params['image']=ImageUpload::uploadImage($params['image']);
         }
-        // dd($params);
-        return Category::Create($params);
+
+        return $this->categoryRepository->store($params);
     }
 
 
 
     public function getById($id , $childrenCount=false){
         // dd($id);
-        $query= Category::where('id',$id);
-        if($childrenCount){
-            $query->withCount('child');
-        }
-       return $query->firstOrFail();
+        return $this->categoryRepository->getById($id,$childrenCount=false);
+
     }
+
+
 
     public function update($id,$params) {
 
