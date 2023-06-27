@@ -4,7 +4,8 @@ namespace App\Repositories;
 
 use App\Models\Category;
 
-class CategoryRepository{
+class CategoryRepository implements ReposatoryInterface
+{
 
     public $category;
     public function __construct(Category $category)
@@ -33,6 +34,6 @@ class CategoryRepository{
        return $query->firstOrFail();
     }
 
-    
+
 
 }

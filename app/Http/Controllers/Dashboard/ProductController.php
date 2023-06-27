@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
+use App\Service\ProductService;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -10,10 +12,22 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    protected $product;
+
+    public function __construct(ProductService $product)
     {
-        //
+        $this->product = $product;
     }
+
+   public function index()
+   {
+       //
+       $mainProducts=$this->product->getMainproduct();
+       // $mainCategories=(new pr$productService)->getMainpr$product();
+       // $mainCategories=pr$product::where('prodect_id',0)->orWhere('prodect_id',null)->get();
+       $products=Product::paginate(10);
+       return view('dashboard.products.index',compact('mainProducts','products'));
+   }
 
     /**
      * Show the form for creating a new resource.

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\IndexController;
+use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\Dashboard\SettingController;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,9 @@ Route::group(['as'=>'dashboard.'],function(){
     // category routes
     Route::delete('/categories/delete/{id}',[CategoryController::class,'delete'] )->name('categories.delete');
     Route::resource('categories', CategoryController::class);
+
+    // product route
+    Route::resource('products',ProductController::class);
 });
 
 
