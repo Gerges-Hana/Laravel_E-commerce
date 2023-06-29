@@ -57,12 +57,12 @@
                </a>
                <ul class="sidebar-submenu">
                    <li>
-                       <a href="order.html">
+                       <a href="{{ route('dashboard.products.index') }}">
                            <i class="fa fa-circle"></i>المنتجات
                        </a>
                    </li>
                    <li>
-                       <a href="transactions.html">
+                       <a href="{{ route('dashboard.products.create') }}">
                            <i class="fa fa-circle"></i>اضافة منتج
                        </a>
                    </li>

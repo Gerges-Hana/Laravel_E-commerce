@@ -93,11 +93,6 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
-        dd($id,'destroy');
-    }
     public function delete(string $id)
     {
         //

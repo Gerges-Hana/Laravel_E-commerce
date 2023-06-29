@@ -70,10 +70,42 @@
                                     </thead>
 
                                     <tbody>
+                                        @foreach ($products as $product)
+                                        <tr>
+
+                                            <tr>
+                                                <td>{{ $product->name }}</td>
+                                                <td>{{$product->Category->name}}</td>
+                                                <td>{{ $product->price }}</td>
+                                                <th>{{ $product->discount_price }}</th>
+                                                <td><img src="{{ asset( $product->image) }}" alt="{{ $product->name }}" width="50"></td>
+                                                {{-- <td><img src="{{ $product->image }}" alt="{{ $product->name }}" width="50"></td> --}}
+
+
+
+
+
+                                                <td class="d-flex justify-content-around">
+                                                  <a type="" href="{{ route('dashboard.products.edit', $product->id) }}" class="btn btn-info py-0">تعديل</a>
+                                                  <form action="{{ route('dashboard.products.destroy', $product->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <a type="submit" class="btn btn-danger">حذف</a>
+                                                  </form>
+                                                </td>
+                                              </tr>
+
+                                        </tr>
+                                        @endforeach
+
 
                                     </tbody>
+
                                 </table>
                             </div>
+                            {{-- <div class="pagination m-auto"> --}}
+                               <p class="text-center"> {{ $products->links() }}</p>
+                            {{-- </div> --}}
                         </div>
                     </div>
                 </div>
@@ -82,57 +114,46 @@
         <!-- Container-fluid Ends-->
 
 
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete Confirmation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete this item?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <form action="{{ route('dashboard.products.destroy', $product->id) }}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{{-- ================================================ --}}
+
+{{-- ================================================ --}}
 
     </div>
     </div>
 @endsection
 
+<script>
+    $('#deleteModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget)
+      var id = button.data('id')
+      var modal = $(this)
+      modal.find('form').attr('action', '/delete/' + id)
+    })
+  </script>
 
-@push('javascripts')
-    <script type="text/javascript">
-        $(function() {
-            var table = $('#editableTable').DataTable({
-                processing: true,
-                serverSide: true,
-                ajax: "{{ Route('dashboard.products.getall') }}",
-                columns: [
 
-                    {
-                        data: 'name',
-                        name: 'name'
-                    },
-                    {
-                        data: 'category',
-                        name: 'category'
-                    },
-                    {
-                        data: 'price',
-                        name: 'price'
-                    },
-                    {
-                        data: 'discount_price',
-                        name: 'discount_price'
-                    },
-                    {
-                        data: 'color',
-                        name: 'color'
-                    },
-                    {
-                        data: 'action',
-                        name: 'action',
-                        orderable: false,
-                        searchable: false
-                    }
-
-                ]
-            });
-
-        });
-
-        $('#editableTable tbody').on('click', '#deleteBtn', function(argument) {
-            var id = $(this).attr("data-id");
-            console.log(id);
-            $('#deletemodal #id').val(id);
-        })
-    </script>
-@endpush
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ asset('js/jquery.min.js') }}"></script>

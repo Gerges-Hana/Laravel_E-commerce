@@ -68,39 +68,39 @@
 
                                         </tr>
                                     </thead>
-                                    @foreach ($categories as $category)
-                                    <tr>
-                                        {{-- <th>{{$category->name}}</th>
-                                        <th>{{$category->image}}</th>
-                                        <th>{{$category->description}}</th> --}}
-
-
-
-
-                                        <tr>
-                                            <td>{{ $category->name }}</td>
-                                             {{-- <img src="{{ asset('storage/' . $image->filename) }}" alt="{{ $image->description }}"> --}}
-                                            <td><img src="{{ asset( $category->image) }}" alt="{{ $category->name }}" width="50"></td>
-                                            {{-- <td><img src="{{ $category->image }}" alt="{{ $category->name }}" width="50"></td> --}}
-                                            <td>{{ $category->prodect_id }}</td>
-                                            <td class="d-flex justify-content-around">
-                                              <a href="{{ route('dashboard.categories.edit', $category->id) }}" class="btn btn-primary">تعديل</a>
-                                              {{-- <a href="{{ route('dashboard.categories.show', $category->id) }}" class="btn btn-success">عرض</a> --}}
-
-
-                                              <form action="{{ route('dashboard.categories.delete', $category->id) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                {{-- <button type="submit" class="btn btn-danger">حذف</button> --}}
-                                                {{-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-delete">حذف</button> --}}
-                                                {{-- <a href="{{ route('dashboard.categories.delete', $category->id) }}" class="btn btn-danger">حذف</a> --}}
-                                              </form>
-                                            </td>
-                                          </tr>
-
-                                    </tr>
-                                    @endforeach
                                     <tbody>
+                                        @foreach ($categories as $category)
+                                        <tr>
+                                            {{-- <th>{{$category->name}}</th>
+                                            <th>{{$category->image}}</th>
+                                            <th>{{$category->description}}</th> --}}
+
+
+
+
+                                            <tr>
+                                                <td>{{ $category->name }}</td>
+                                                 {{-- <img src="{{ asset('storage/' . $image->filename) }}" alt="{{ $image->description }}"> --}}
+                                                <td><img src="{{ asset( $category->image) }}" alt="{{ $category->name }}" width="50"></td>
+                                                {{-- <td><img src="{{ $category->image }}" alt="{{ $category->name }}" width="50"></td> --}}
+                                                <td>{{ $category->prodect_id }}</td>
+                                                <td class="d-flex justify-content-around">
+                                                  <a href="{{ route('dashboard.categories.edit', $category->id) }}" class="btn btn-primary">تعديل</a>
+                                                  {{-- <a href="{{ route('dashboard.categories.show', $category->id) }}" class="btn btn-success">عرض</a> --}}
+
+
+                                                  <form action="{{ route('dashboard.categories.delete', $category->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    {{-- <button type="submit" class="btn btn-danger">حذف</button> --}}
+                                                    {{-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-delete">حذف</button> --}}
+                                                    {{-- <a href="{{ route('dashboard.categories.delete', $category->id) }}" class="btn btn-danger">حذف</a> --}}
+                                                  </form>
+                                                </td>
+                                              </tr>
+
+                                        </tr>
+                                        @endforeach
                                         {{-- {{$posts}} --}}
 
 

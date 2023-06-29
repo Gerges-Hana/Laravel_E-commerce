@@ -54,4 +54,7 @@ class CategoryService
         // dd($params);
         return $category->update($params);
     }
+    public function getAll(){
+
+    }
 }

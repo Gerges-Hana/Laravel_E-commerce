@@ -14,4 +14,6 @@ class IndexController extends Controller
         // dd('ggggg');
         return view('dashboard.index');
     }
+
+
 }

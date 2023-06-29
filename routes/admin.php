@@ -36,7 +36,7 @@ Route::group(['as'=>'dashboard.'],function(){
     Route::resource('categories', CategoryController::class);
 
     // product route
-    Route::resource('products',ProductController::class);
+    Route::resource('products',ProductController::class)->except('show');
 });
 
 

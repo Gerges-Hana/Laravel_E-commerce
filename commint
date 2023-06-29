@@ -1,3 +1,6 @@
-php artisan db:seed --class=CategorySeeder
+php artisan make:seeder SeederName
+php artisan db:seed --class=SeederName
+
+php artisan make:factory FactoryName --model=ModelName
 
 php artisan make:request Dashboard/categories/categoryStoreRequest
