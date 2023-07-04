@@ -16,6 +16,10 @@ class ProductReposatory implements ReposatoryInterface
 
     }
 
+    public function addColor($product, $params)
+    {
+        $product->productColor()->createMany($params['colors']);
+    }
     public function store($params) {
 
 

@@ -30,6 +30,8 @@ class ProdectStoreRequest extends FormRequest
             'description' => 'string',
             'price' => 'nullable|numeric',
             'discount_price' => 'nullable|numeric',
+            'colors'=>'nullable|array',
+            'colors.*'=>'nullable|string',
         ];
     }
 }

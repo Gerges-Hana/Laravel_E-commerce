@@ -13,6 +13,10 @@
     <link rel="icon" href="{{ asset('dashboard') }}/assets/images/dashboard/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('dashboard') }}/assets/images/dashboard/favicon.png" type="image/x-icon">
     <title>Multikart - Premium Admin Template</title>
+    {{-- sellect 2  --}}
+    <link href="{{ asset('dashboard/assets/css/select2.min.css') }}" rel="stylesheet" />
+    {{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> --}}
+
 
     <!-- Google font-->
     <link rel="stylesheet"
@@ -294,6 +298,10 @@
     <script src="{{ asset('dashboard') }}/assets/js/admin-script.js"></script>
     <!--dropify admin-->
     <script src="{{ asset('dashboard/assets/dropify.js') }}"></script>
+
+    {{-- sellect 2 --}}
+    <script src="{{ asset('dashboard/assets/js/select2.min.js') }}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> --}}
 
     <script>
         $('.dropify').dropify();

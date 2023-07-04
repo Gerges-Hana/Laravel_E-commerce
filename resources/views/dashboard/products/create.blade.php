@@ -36,6 +36,17 @@
                         <div class="card-header">
                             <h5>اضافة منتج</h5>
                         </div>
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li style="display: block">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+
                         <div class="card-body">
                             <div class="digital-add needs-validation">
                                 <form action="{{ route('dashboard.products.store') }}" method="post"
@@ -62,14 +73,15 @@
                                             </select>
                                         </div>
 
-
+<br>
                                         <div class="form-group">
                                             <label for="validationCustom05" class="col-form-label pt-0">
                                                 الصورة الرئيسية للمنتج</label>
                                             <input class="form-control dropify" id="validationCustom05" type="file"
                                                 name="image">
-                                        </div>
 
+                                        </div>
+<br>
 
                                         <div class="form-group">
                                             <label for="validationCustom01" class="col-form-label pt-0">
@@ -100,8 +112,8 @@
                                         <div class="form-group">
                                             <label for="validationCustom02" class="col-form-label">
                                                 الألوان المتاحة للمنتج </label>
-                                            <select class="form-control colors" multiple="multiple" name="colors[]">
-                                            </select>
+                                            <select class="form-control colors" multiple="multiple" name="colors[]"></select>
+
                                         </div>
 
 
@@ -142,7 +154,7 @@
 @push('javascripts')
     <script>
         $(".colors").select2({
-            tags: true
+            tags: true;
         });
     </script>
 

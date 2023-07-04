@@ -22,6 +22,11 @@ class ProductService{
             $params['image']=ImageUpload::uploadImage($params['image']);
         }
 
+        if (isset($params['colors'])) {
+            $params['color'] = implode(',' , $params['colors']);
+            unset($params['colors']);
+          }
+
         return $this->productRepository->store($params);
     }
 
@@ -43,6 +48,10 @@ class ProductService{
             $params['image']=ImageUpload::uploadImage($params['image']);
         }
         // dd($params);
+        if (isset($params['colors'])) {
+            $params['color'] = implode(',' , $params['colors']);
+            unset($params['colors']);
+          }
         return $category->update($params);
     }
 
