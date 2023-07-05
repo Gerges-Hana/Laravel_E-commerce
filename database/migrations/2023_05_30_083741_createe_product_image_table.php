@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('image');
             // $table->integer('product_color_size_id')->unsigned();
             // $table->foreign('product_color_size_id')->references('id')->on('product_color_size');
-            $table->foreignId('product_size_id')
+            $table->foreignId('product_id')
             ->nullable()
-            ->constrained('product_color_size')
+            ->constrained('products')
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->timestamps();

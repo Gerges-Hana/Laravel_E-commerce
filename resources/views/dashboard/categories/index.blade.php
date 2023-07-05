@@ -92,7 +92,7 @@
                                                   <form action="{{ route('dashboard.categories.delete', $category->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    {{-- <button type="submit" class="btn btn-danger">حذف</button> --}}
+                                                    <button type="submit" class="btn btn-danger">حذف</button>
                                                     {{-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-delete">حذف</button> --}}
                                                     {{-- <a href="{{ route('dashboard.categories.delete', $category->id) }}" class="btn btn-danger">حذف</a> --}}
                                                   </form>

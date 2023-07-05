@@ -51,7 +51,7 @@ class ProductController extends Controller
     public function store(ProdectStoreRequest $request)
     {
         //
-        dd($request);
+        // dd($request);
 
         $product=$this->product->store($request->validated());
         return redirect()->route('dashboard.products.index');

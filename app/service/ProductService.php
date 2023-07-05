@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\Models\Product;
 use App\Repositories\ProductReposatory;
 use App\Utils\ImageUpload;
 
@@ -52,6 +53,8 @@ class ProductService{
             $params['color'] = implode(',' , $params['colors']);
             unset($params['colors']);
           }
+
+
         return $category->update($params);
     }
 

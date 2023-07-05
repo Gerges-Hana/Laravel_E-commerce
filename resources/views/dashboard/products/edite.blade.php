@@ -102,7 +102,7 @@
                                                 name="discount_price"  value="{{$product->discount_price}}">
                                         </div>
 
-                                        <div class="form-group">
+                                        {{-- <div class="form-group">
                                             <label for="validationCustom02" class="col-form-label">
                                                 الألوان المتاحة للمنتج </label>
                                             <select class="form-control colors" multiple="multiple" name="colors[]" value="{{$product->color}}">
@@ -115,6 +115,14 @@
                                                 الاحجام المتوفرة </label>
                                             <select class="form-control colors" multiple="multiple" name="sizes[]" value="{{$product->size}}">
                                             </select>
+                                        </div> --}}
+
+                                        <div class="form-group">
+                                            <label for="validationCustom05" class="col-form-label pt-0">
+                                            صور المنتج</label>
+                                            <input class="form-control dropify" id="validationCustom05" type="file"
+                                                name="images[]"multiple>
+
                                         </div>
 
 

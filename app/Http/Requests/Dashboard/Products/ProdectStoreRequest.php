@@ -26,6 +26,8 @@ class ProdectStoreRequest extends FormRequest
             'name' => 'required|string',
 
             'image' => 'required|image|mimes:png,jpg,ipeggif,svg|max:2048',
+            'images' => 'nullable|array',
+            'images.*' => 'required|image|mimes:png,jpg,ipeggif,svg|max:2048',
             'category_id' => 'required|numeric|exists:categories,id',
             'description' => 'string',
             'price' => 'nullable|numeric',

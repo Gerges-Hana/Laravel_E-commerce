@@ -4,10 +4,13 @@ use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\IndexController;
 use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\Dashboard\SettingController;
+use App\Http\Controllers\HomeController;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Routing\RouteGroup;
+use Mockery\Matcher\Type;
+use PHPUnit\Event\TypeMap;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +43,16 @@ Route::group(['as'=>'dashboard.'],function(){
 });
 
 
+
+Route::get('/tracking/show',function( Type $var=null){
+    return view('traking');
+})->name('tracking.show');
+Route::get('tracking/',function(){
+    $data=[
+        [30.0449,31.2353],
+        [30.0566,31.2348],
+        [30.0477,31.2333],
+        [30.0455,31.2322],
+    ];
+    return response()->json($data);
+})->name('tracking');

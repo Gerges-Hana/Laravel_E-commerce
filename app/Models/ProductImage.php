@@ -9,7 +9,7 @@ class ProductImage extends Model
 {
 
     use HasFactory;
-    protected $fillable=['id', 'image', 'product_size_id'];
+    protected $fillable=['id', 'image', 'product_id'];
     protected $table='product_images';
 
     public function productColorSize(){

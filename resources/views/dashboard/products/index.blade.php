@@ -85,14 +85,33 @@
 
 
 
-                                                <td class="d-flex justify-content-around">
+                                                {{-- <td class="d-flex justify-content-around">
                                                   <a type="" href="{{ route('dashboard.products.edit', $product->id) }}" class="btn btn-info py-0">تعديل</a>
                                                   <form action="{{ route('dashboard.products.destroy', $product->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <a type="submit" class="btn btn-danger">حذف</a>
                                                   </form>
-                                                </td>
+                                                </td> --}}
+
+
+
+
+                                                {{-- =========================== --}}
+                                                <td class="d-flex justify-content-around">
+                                                    <a href="{{ route('dashboard.products.edit', $product->id) }}" class="btn btn-primary">تعديل</a>
+                                                    {{-- <a href="{{ route('dashboard.categories.show', $category->id) }}" class="btn btn-success">عرض</a> --}}
+
+
+                                                    <form action="{{ route('dashboard.products.destroy', $product->id) }}" method="POST">
+                                                      @csrf
+                                                      @method('DELETE')
+                                                      <button type="submit" class="btn btn-danger">حذف</button>
+                                                      {{-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-delete">حذف</button> --}}
+                                                      {{-- <a href="{{ route('dashboard.categories.delete', $category->id) }}" class="btn btn-danger">حذف</a> --}}
+                                                    </form>
+                                                  </td>
+                                                {{-- =========================== --}}
                                               </tr>
 
                                         </tr>

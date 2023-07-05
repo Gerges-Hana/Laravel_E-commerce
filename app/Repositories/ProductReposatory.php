@@ -3,6 +3,8 @@ namespace App\Repositories;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\ProductImage;
+use App\Utils\ImageUpload;
 
 class ProductReposatory implements ReposatoryInterface
 {
@@ -22,9 +24,40 @@ class ProductReposatory implements ReposatoryInterface
     }
     public function store($params) {
 
+        $product= $this->product->Create($params);
+        $images=[];
+        if (isset($params['images'])) {
+            # code...
+            $i=0;
+            foreach($params['images'] as $key =>$value){
+                $images[$i]['image']=ImageUpload::uploadImage($value);
+                $images[$i]['product_id']=$product->id;
+                $i++;
+            }
+        }
 
-        return $this->product->Create($params);
+        $product->images()->createMany($images);
+    //    $x= ProductImage::create($images);
+    //     dd($x);
+        return $product;
     }
+
+
+    // public function uploadMultibleImages($images,$product){
+    //     $images=[];
+    //     if (isset($params['images'])) {
+    //         # code...
+    //         $i=0;
+    //         foreach($params['images'] as $key =>$value){
+    //             $images[$i]['image']=ImageUpload::uploadImage($value);
+    //             $images[$i]['product_id']=$product->id;
+    //             $i++;
+    //         }
+    //     }
+
+
+    //     return $images;
+    // }
 
     public function getById($id , $childrenCount=false){
         $query= $this->product->where('id',$id);
