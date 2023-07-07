@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StripeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,11 @@ Route::get('/', function () {
 Route::get('/categories/edit', function () {
     return view('dashboard.categories.edit');
 });
-
+// +++++++++++++++++ checkout +++++++++++++++++++++++
+Route::get('/checkout',[StripeController::class,'checkout'])->name('checkout');
+Route::post('/session',[StripeController::class,'session'])->name('session');
+Route::get('/success',[StripeController::class,'success'])->name('success');
+// +++++++++++++++++ checkout +++++++++++++++++++++++
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
