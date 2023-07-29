@@ -71,16 +71,14 @@
                                     <tbody>
                                         @foreach ($categories as $category)
                                         <tr>
-                                            {{-- <th>{{$category->name}}</th>
-                                            <th>{{$category->image}}</th>
-                                            <th>{{$category->description}}</th> --}}
+                                           
+
 
 
 
 
                                             <tr>
                                                 <td>{{ $category->name }}</td>
-                                                 {{-- <img src="{{ asset('storage/' . $image->filename) }}" alt="{{ $image->description }}"> --}}
                                                 <td><img src="{{ asset( $category->image) }}" alt="{{ $category->name }}" width="50"></td>
                                                 {{-- <td><img src="{{ $category->image }}" alt="{{ $category->name }}" width="50"></td> --}}
                                                 <td>{{ $category->prodect_id }}</td>
