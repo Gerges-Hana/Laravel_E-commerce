@@ -63,7 +63,7 @@
                                             <th>القسم </th>
                                             <th>السعر الأساسي</th>
                                             <th>التخفيض الأساسي</th>
-                                            <th>الالوان</th>
+                                            <th>الصوره</th>
                                             <th></th>
 
                                         </tr>
@@ -75,7 +75,7 @@
 
                                             <tr>
                                                 <td>{{ $product->name }}</td>
-                                                <td>{{$product->Category->name}}</td>
+                                                <td>{{$product->Category?->name}}</td>
                                                 <td>{{ $product->price }}</td>
                                                 <th>{{ $product->discount_price }}</th>
                                                 <td><img src="{{ asset( $product->image) }}" alt="{{ $product->name }}" width="50"></td>
@@ -98,15 +98,15 @@
 
 
                                                 {{-- =========================== --}}
-                                                <td class="d-flex justify-content-around">
-                                                    <a href="{{ route('dashboard.products.edit', $product->id) }}" class="btn btn-primary">تعديل</a>
+                                                <td class="d-flex justify-content-around justify-items-center">
+                                                    <a href="{{ route('dashboard.products.edit', $product->id) }}" class="btn btn-primary m-1" style="height: 90%">تعديل</a>
                                                     {{-- <a href="{{ route('dashboard.categories.show', $category->id) }}" class="btn btn-success">عرض</a> --}}
 
 
                                                     <form action="{{ route('dashboard.products.destroy', $product->id) }}" method="POST">
                                                       @csrf
                                                       @method('DELETE')
-                                                      <button type="submit" class="btn btn-danger">حذف</button>
+                                                      <button type="submit" class="btn btn-danger m-1" style="height: 90%">حذف</button>
                                                       {{-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirm-delete">حذف</button> --}}
                                                       {{-- <a href="{{ route('dashboard.categories.delete', $category->id) }}" class="btn btn-danger">حذف</a> --}}
                                                     </form>

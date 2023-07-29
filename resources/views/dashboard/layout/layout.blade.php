@@ -61,8 +61,10 @@
                 <div class="main-header-left d-lg-none w-auto">
                     <div class="logo-wrapper">
                         <a href="index.html">
-                            <img class="blur-up lazyloaded d-block d-lg-none"
-                                src="assets/images/dashboard/multikart-logo-black.png" alt="">
+                            <img class="d-none d-lg-block blur-up lazyloaded" src="{{asset($setting->faveicon)}}"
+                    alt="" style="max-height: 125px">
+                            {{-- <img class="blur-up lazyloaded d-block d-lg-none"
+                                src="assets/images/dashboard/multikart-logo-black.png" alt=""> --}}
                         </a>
                     </div>
                 </div>
@@ -169,7 +171,9 @@
                         <li class="onhover-dropdown">
                             <div class="media align-items-center">
                                 <img class="align-self-center pull-right img-50 blur-up lazyloaded"
-                                    src="assets/images/dashboard/user3.jpg" alt="header-user">
+                                src="{{asset($setting->faveicon)}}" alt="header-user">
+                                    {{-- <img class="d-none d-lg-block blur-up lazyloaded" src="{{asset($setting->faveicon)}}"
+                    alt="" style="max-height: 125px"> --}}
                                 <div class="dotted-animation">
                                     <span class="animate-circle"></span>
                                     <span class="main-circle"></span>
@@ -224,14 +228,14 @@
             <!-- footer start-->
             <footer class="footer">
                 <div class="container-fluid">
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-md-6 footer-copyright text-start">
                             <p class="mb-0">Copyright 2019 © Multikart All rights reserved.</p>
                         </div>
                         <div class="col-md-6 pull-right text-end">
                             <p class=" mb-0">Hand crafted & made with<i class="fa fa-heart"></i></p>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </footer>
             <!-- footer end-->

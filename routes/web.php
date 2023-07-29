@@ -20,6 +20,14 @@ Route::get('/', function () {
 Route::get('/categories/edit', function () {
     return view('dashboard.categories.edit');
 });
+// =======================Nafizly===============================================
+Route::get('nafezly', function () {
+    return ('paypal.nafezly');
+    // return view('paypal.nafezly');
+})->name('nafezly');
+
+// =======================Nafizly===============================================
+
 // +++++++++++++++++ checkout +++++++++++++++++++++++
 Route::get('/checkout',[StripeController::class,'checkout'])->name('checkout');
 Route::post('/session',[StripeController::class,'session'])->name('session');
